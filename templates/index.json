@@ -2,6 +2,55 @@
   "sections": {
     "core-features": {
       "type": "core-features",
+      "blocks": {
+        "fd36a816-1490-41c2-8912-4430dcff20f5": {
+          "type": "core_feature_card",
+          "settings": {
+            "feature_title": "Free Shipping On Over $ 50",
+            "feature_img": "shopify:\/\/shop_images\/core_features01.png",
+            "feature_des": "Agricultural mean crops livestock",
+            "colle_list": [
+
+            ]
+          }
+        },
+        "78dbec90-f632-467d-8ad3-a83f8ea85f04": {
+          "type": "core_feature_card",
+          "settings": {
+            "feature_title": "Online Support",
+            "feature_des": "30 days money back guarantee",
+            "colle_list": [
+
+            ]
+          }
+        },
+        "665a52b7-8c40-4cdf-9dd7-2dec7a62cf0f": {
+          "type": "core_feature_card",
+          "settings": {
+            "feature_title": "Online Support",
+            "feature_des": "30 days money back guarantee",
+            "colle_list": [
+
+            ]
+          }
+        },
+        "129bec46-c5c1-47c8-9a4b-581ce35530a1": {
+          "type": "core_feature_card",
+          "settings": {
+            "feature_title": "Online Support",
+            "feature_des": "30 days money back guarantee",
+            "colle_list": [
+
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "fd36a816-1490-41c2-8912-4430dcff20f5",
+        "78dbec90-f632-467d-8ad3-a83f8ea85f04",
+        "665a52b7-8c40-4cdf-9dd7-2dec7a62cf0f",
+        "129bec46-c5c1-47c8-9a4b-581ce35530a1"
+      ],
       "settings": {
       }
     },
@@ -10,13 +59,14 @@
       "settings": {
       }
     },
-    "latest-news-update": {
-      "type": "latest-news-update",
-      "settings": {
-      }
-    },
     "exclusive-best-selling": {
       "type": "exclusive-best-selling",
+      "settings": {
+        "collection": ""
+      }
+    },
+    "latest-news-update": {
+      "type": "latest-news-update",
       "settings": {
       }
     }
