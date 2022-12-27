@@ -1,11 +1,11 @@
 {
-  "name": "index",
+  "name": "page",
   "sections": {
-    "core-features":{
-      "type": "core-features"
-    }
+      "main":{
+          "type": "core-features"
+      }
   },
   "order": [
-    "core-features"
+      "main"
   ]
 }
