@@ -1,22 +1,30 @@
 {
-    "name": "index",
-    "sections": {
-        "core-features":{
-            "type": "core-features"
-        },"special-offer":{
-            "type": "special-offer"
-        },
-        "latest-news-update":{
-            "type": "latest-news-update"
-        },
-        "exclusive-best-selling":{
-            "type": "exclusive-best-selling"
-        }
+  "sections": {
+    "core-features": {
+      "type": "core-features",
+      "settings": {
+      }
     },
-    "order": [
-        "core-features",
-        "special-offer",
-        "exclusive-best-selling",
-        "latest-news-update"
-    ]
+    "special-offer": {
+      "type": "special-offer",
+      "settings": {
+      }
+    },
+    "latest-news-update": {
+      "type": "latest-news-update",
+      "settings": {
+      }
+    },
+    "exclusive-best-selling": {
+      "type": "exclusive-best-selling",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "core-features",
+    "special-offer",
+    "exclusive-best-selling",
+    "latest-news-update"
+  ]
 }
