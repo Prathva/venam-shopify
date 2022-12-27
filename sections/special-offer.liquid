@@ -1,0 +1,279 @@
+<html>
+  <head>
+    <!-- CSS here -->
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+    {{ 'fontawesome-all.min.css' | asset_url | stylesheet_tag }}
+    {{ 'flaticon.css' | asset_url | stylesheet_tag }}
+    {{ 'default.css' | asset_url | stylesheet_tag }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ 'responsive.css' | asset_url | stylesheet_tag }}
+  </head>
+
+  <body>
+    <!-- special-offer-area -->
+    <section class="special-offer-area theme-bg pt-100 pb-70">
+      {% render 'title-heading' %}
+
+      <div class="custom-container">
+        <div class="row justify-content-center">
+          {% comment %} Single Product content starts here {% endcomment %}
+          <div class="col-xl-3 col-lg-5 col-md-6">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'Single-Product-content' -%}
+                  <div class="special-offer-item-box">
+                    <div class="special-single-item">
+                      <div class="special-single-item-thumb">
+                        <a href="/pages/shop-details">
+                          {% if block.settings.product_img != blank %}
+                            {{ block.settings.product_img | image_url: width: auto | image_tag: loading: 'lazy' }}
+                          {% endif %}
+                        </a>
+                      </div>
+                      <div class="special-single-item-content">
+                        <h5>
+                          <a href="shop-details.html">{{ block.settings['product-title'] }}</a>
+                        </h5>
+                        <p>
+                          {{ block.settings['product-price'] -}}
+                          <span>{{ block.settings['product-price-off'] }}</span>
+                        </p>
+                        <div class="product-color">
+                          <span style="background-color:{{ block.settings.product-color-1}};"></span>
+                          <span style="background-color:{{ block.settings.product-color-2}};"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+          {% comment %} Single Product content end {% endcomment %}
+
+          {% comment %} Product card Section starts {% endcomment %}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'product_card' -%}
+                <div class="col-xl-3 col-lg-5 col-md-6">
+                  <div class="special-offer-item-box">
+                    <div class="special--cat--item--wrap">
+                      <div class="special-offer-title mb-35">
+                        <h4 class="title">{{ block.settings.main_heading }}</h4>
+                        <div class="view-more">
+                          <a href="shop-left-sidebar.html"><i class="fas fa-angle-right"></i></a>
+                        </div>
+                      </div>
+                      <ul class="special--cat--list">
+                        <li class="special--cat--item">
+                          <a href="shop-left-sidebar.html">
+                            {% if block.settings.product_image1 != blank %}
+                              {{ block.settings.product_image1 | image_url: width: auto | image_tag: loading: 'lazy' }}
+                            {% endif %}
+                            <span class="tag" data-background="img/images/tag_bg.png">New!</span>
+                            <span class="special--cat--name">{{ block.settings.product_heading1 }}</span>
+                          </a>
+                        </li>
+                        <li class="special--cat--item">
+                          <a href="shop-left-sidebar.html">
+                            {% if block.settings.product_image2 != blank %}
+                              {{ block.settings.product_image2 | image_url: width: auto | image_tag: loading: 'lazy' }}
+                            {% endif %}
+                            <span class="special--cat--name">{{ block.settings.product_heading2 }}</span>
+                          </a>
+                        </li>
+                        <li class="special--cat--item">
+                          <a href="shop-left-sidebar.html">
+                            {% if block.settings.product_image3 != blank %}
+                              {{ block.settings.product_image3 | image_url: width: auto | image_tag: loading: 'lazy' }}
+                            {% endif %}
+                            <span class="special--cat--name">{{ block.settings.product_heading3 }}</span>
+                          </a>
+                        </li>
+                        <li class="special--cat--item">
+                          <a href="shop-left-sidebar.html">
+                            {% if block.settings.product_image4 != blank %}
+                              {{ block.settings.product_image4 | image_url: width: auto | image_tag: loading: 'lazy' }}
+                            {% endif %}
+                            <span class="special--cat--name">{{ block.settings.product_heading4 }}</span>
+                          </a>
+                        </li>
+                      </ul>
+                      <a href="shop-left-sidebar.html" class="shop-now">Shop Now</a>
+                    </div>
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+          {% comment %} Product card section end {% endcomment %}
+
+          {% comment %} Speacial offer Banner section start {% endcomment %}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'banner' -%}
+                <div class="col-xl-3 col-lg-5 col-md-6">
+                  <div class="special-offer-item-box special-offer-banner">
+                    <a href="shop-left-sidebar.html">
+                      {% if block.settings.banner_image != blank %}
+                        {{ block.settings.banner_image | image_url: width: auto | image_tag: loading: 'lazy' }}
+                      {% endif %}
+                    </a>
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+          {% comment %} Special offer Banner section end {% endcomment %}
+        </div>
+      </div>
+    </section>
+    <!-- special-offer-area-end -->
+  </body>
+</html>
+
+{% schema %}
+{
+  "name": "Speacil Offer",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub-title",
+          "label": "Enter Sub-title"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Enter title"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img",
+          "label": "Please select title image"
+        }
+      ]
+    },
+    {
+      "type": "Single-Product-content",
+      "name": "Single product content",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "product-title",
+          "label": "Enter special product title"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_img",
+          "label": "Select product image"
+        },
+        {
+          "type": "text",
+          "id": "product-price-off",
+          "label": "Enter discount percentage(%)",
+          "default": "{ 50% off}"
+        },
+        {
+          "type": "text",
+          "id": "product-price",
+          "label": "Enter product price",
+          "default": "US $ 17.99"
+        },
+        {
+          "type": "color",
+          "id": "product-color-1",
+          "label": "Product color 1"
+        },
+        {
+          "type": "color",
+          "id": "product-color-2",
+          "label": "Product color 2"
+        }
+      ]
+    },
+    {
+      "type": "product_card",
+      "name": "Product card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "main_heading",
+          "label": "Enter main heading"
+        },
+        {
+          "type": "text",
+          "id": "product_heading1",
+          "label": "Enter product heading1"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image1",
+          "label": "Product image1"
+        },
+        {
+          "type": "text",
+          "id": "product_heading2",
+          "label": "Enter product heading2"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image2",
+          "label": "Product image2"
+        },
+        {
+          "type": "text",
+          "id": "product_heading3",
+          "label": "Enter product heading3"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image3",
+          "label": "Product image3"
+        },
+        {
+          "type": "text",
+          "id": "product_heading4",
+          "label": "Enter product heading4"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image4",
+          "label": "Product image4"
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Banner Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Speacial Offer",
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "Single-Product-content"
+        },
+        {
+          "type": "product_card"
+        },
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

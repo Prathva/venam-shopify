@@ -1,0 +1,15 @@
+{
+    "name": "page",
+    "sections": {
+        "main":{
+            "type": "main-page"
+        },
+        "contact":{
+            "type": "contact"
+        }
+    },
+    "order": [
+        "main",
+        "contact"
+    ]
+}

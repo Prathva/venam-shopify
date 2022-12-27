@@ -1,0 +1,20 @@
+[
+    {
+        "name": "theme_info",
+        "theme_name": "Venam",
+        "theme_version": "1.0.0",
+        "theme_author": "Ajmera Infotech Inc.",
+        "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+        "theme_support_email": "contact@ajmerainfotech.com"
+    },
+    {
+        "name": "Favicon",
+        "settings": [
+            {
+                "type":"image_picker",
+                "id":"favicon_img",
+                "label":"Favicon Image"
+            }
+        ]
+    }
+]

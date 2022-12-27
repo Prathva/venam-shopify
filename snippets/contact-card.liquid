@@ -1,0 +1,26 @@
+<!-- contact-area -->
+<section class="contact-area primary-bg pt-100 pb-70">
+  <div class="container">
+    <div class="contact-wrap-padding">
+      <div class="row justify-content-center">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'contact_card' -%}
+              <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="contact-info-box text-center mb-30">
+                  <div class="contact-box-icon">
+                    <i class="{{ block.settings.card_icon }}"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h5>{{ block.settings.card_heading }}</h5>
+                    {{ block.settings.card_desc }}
+                  </div>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- contact-area-end -->

@@ -1,0 +1,18 @@
+{
+    "name": "index",
+    "sections": {
+        "core-features":{
+            "type": "core-features"
+        },"special-offer":{
+            "type": "special-offer"
+        },
+        "latest-news-update":{
+            "type": "latest-news-update"
+        }
+    },
+    "order": [
+        "core-features",
+        "special-offer",
+        "latest-news-update"
+    ]
+}

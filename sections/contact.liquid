@@ -1,0 +1,381 @@
+{{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+{{ 'fontawesome-all.min.css' | asset_url | stylesheet_tag }}
+{{ 'default.css' | asset_url | stylesheet_tag }}
+{{ 'style.css' | asset_url | stylesheet_tag }}
+{{ 'responsive.css' | asset_url | stylesheet_tag }}
+{{ 'flaticon.css' | asset_url | stylesheet_tag }}
+
+<!-- contact-area -->
+{% render 'contact-card' %}
+
+<section class="contact-area pt-100 pb-100">
+  <div class="container">
+    {% render 'title-heading' %}
+    <div class="contact-wrap-padding">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="contact-form">
+            <form action="#">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-grp">
+                    <input type="text" placeholder="First Name*">
+                    <i class="far fa-user"></i>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-grp">
+                    <input type="text" placeholder="Last Name*">
+                    <i class="far fa-user"></i>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-grp">
+                    <input type="email" required placeholder="Your Email*">
+                    <i class="far fa-envelope"></i>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-grp">
+                    <input type="text" placeholder="Phone*">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                </div>
+              </div>
+              <textarea name="message" id="message" placeholder="Enter Your Massage"></textarea>
+              <button type="submit" class="btn">submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-map">
+            <img src="img/images/map.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- contact-area-end -->
+
+<!-- limited-offer-area -->
+<section class="limited-offer-area" data-background="img/bg/limited_offer_bg.jpg">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-xl-5 col-lg-6 col-md-7">
+        <div class="limited-offer-left">
+          <div class="limited-offer-title">
+            <span class="sub-title">exclusive offer</span>
+            <h2 class="title">Smart Watch Bracelet</h2>
+          </div>
+          <div class="limited-offer-disc">
+            <img src="img/images/limited_offer_discount.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-5">
+        <div class="limited-offer-action">
+          <a href="#" class="btn">limited time offer</a>
+          <div class="amount-info">
+            <span class="upto">UPTO</span>
+            <span class="amount">$ 50.00</span>
+            <span class="off">OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="limited-overlay-title">Vanam Top Sale 35<span>%</span></h2>
+  <div class="limited-overlay-img"><img src="img/images/limited_offer_img.png" alt=""></div>
+</section>
+<section>
+  <div></div>
+</section>
+<!-- limited-offer-area-end -->
+
+<!-- JS here -->
+
+<script src="js/vendor/jquery-3.5.0.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/main.js"></script>
+
+{% schema %}
+{
+  "name": "Contact",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub-title",
+          "label": "Enter Sub-title"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Enter title"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img",
+          "label": "Please select title image"
+        },
+        {
+          "type": "richtext",
+          "id": "title_desc",
+          "label": "Title Description"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "name": "Contact Card",
+      "type": "contact_card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "card_heading",
+          "label": "Card Heading",
+          "default": "Our Location"
+        },
+        {
+          "type": "richtext",
+          "id": "card_desc",
+          "label": "Card Description",
+          "default": "<p>W898 RTower Stat, Suite 56 Brockland, CA 9622 United States</p>"
+        },
+        {
+          "type": "select",
+          "id": "card_icon",
+          "label": "Card Icon",
+          "options": [
+            {
+              "label": "Shopping Bags",
+              "value": "flaticon-shopping-bags"
+            },
+            {
+              "label": "Shopping Bag",
+              "value": "flaticon-shopping-bag"
+            },
+            {
+              "label": "Magnifying Glass",
+              "value": "flaticon-magnifying-glass"
+            },
+            {
+              "label": "Magnifying Glass-1",
+              "value": "flaticon-magnifying-glass-1"
+            },
+            {
+              "label": "Menu",
+              "value": "flaticon-menu"
+            },
+            {
+              "label": "Menu-1",
+              "value": "flaticon-menu-1"
+            },
+            {
+              "label": "Menu-2",
+              "value": "flaticon-menu-2"
+            },
+            {
+              "label": "Heart",
+              "value": "flaticon-heart"
+            },
+            {
+              "label": "Two arrows",
+              "value": "flaticon-two-arrows"
+            },
+            {
+              "label": "User",
+              "value": "flaticon-user"
+            },
+            {
+              "label": "Justification",
+              "value": "flaticon-justification"
+            },
+            {
+              "label": "Scroll",
+              "value": "flaticon-scroll"
+            },
+            {
+              "label": "Scroll-1",
+              "value": "flaticon-scroll-1"
+            },
+            {
+              "label": "Shuffle",
+              "value": "flaticon-shuffle"
+            },
+            {
+              "label": "Shuffle-1",
+              "value": "flaticon-shuffle-1"
+            },
+            {
+              "label": "Supermarket",
+              "value": "flaticon-supermarket"
+            },
+            {
+              "label": "Witness",
+              "value": "flaticon-witness"
+            },
+            {
+              "label": "Quote Left",
+              "value": "flaticon-quote-left"
+            },
+            {
+              "label": "List",
+              "value": "flaticon-list"
+            },
+            {
+              "label": "List-1",
+              "value": "flaticon-list-1"
+            },
+            {
+              "label": "Grid",
+              "value": "flaticon-grid"
+            },
+            {
+              "label": "Project",
+              "value": "flaticon-project"
+            },
+            {
+              "label": "Revenue",
+              "value": "flaticon-revenue"
+            },
+            {
+              "label": "Quality",
+              "value": "flaticon-quality"
+            },
+            {
+              "label": "Shuttle",
+              "value": "flaticon-shuttle"
+            },
+            {
+              "label": "Invoice",
+              "value": "flaticon-invoice"
+            },
+            {
+              "label": "Secure Payment",
+              "value": "flaticon-secure-payment"
+            },
+            {
+              "label": "24 Hours Support",
+              "value": "flaticon-24-hours-support"
+            },
+            {
+              "label": "Placeholder",
+              "value": "flaticon-placeholder"
+            },
+            {
+              "label": "Telephone",
+              "value": "flaticon-telephone"
+            },
+            {
+              "label": "Mail",
+              "value": "flaticon-mail"
+            },
+            {
+              "label": "Zoom In",
+              "value": "flaticon-zoom-in"
+            },
+            {
+              "label": "Right Arrow",
+              "value": "flaticon-right-arrow"
+            },
+            {
+              "label": "Left Arrow",
+              "value": "flaticon-left-arrow"
+            },
+            {
+              "label": "Cancel",
+              "value": "flaticon-cancel"
+            },
+            {
+              "label": "Cancel-1",
+              "value": "flaticon-cancel-1"
+            },
+            {
+              "label": "Cancel-2",
+              "value": "flaticon-cancel-2"
+            },
+            {
+              "label": "Done",
+              "value": "flaticon-done"
+            },
+            {
+              "label": "Check",
+              "value": "flaticon-check"
+            },
+            {
+              "label": "Select",
+              "value": "flaticon-select"
+            },
+            {
+              "label": "Password",
+              "value": "flaticon-password"
+            },
+            {
+              "label": "Calendar",
+              "value": "flaticon-calendar"
+            },
+            {
+              "label": "Exit",
+              "value": "flaticon-exit"
+            },
+            {
+              "label": "Plus",
+              "value": "flaticon-plus"
+            },
+            {
+              "label": "Plus-1",
+              "value": "flaticon-plus-1"
+            },
+            {
+              "label": "Crosshair",
+              "value": "flaticon-crosshair"
+            },
+            {
+              "label": "Loupe",
+              "value": "flaticon-loupe"
+            },
+            {
+              "label": "Right Quote",
+              "value": "flaticon-right-quote"
+            },
+            {
+              "label": "Lock",
+              "value": "flaticon-lock"
+            },
+            {
+              "label": "Copyright",
+              "value": "flaticon-copyright"
+            }
+          ]
+        }
+      ],
+      "limit": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact",
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "contact_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

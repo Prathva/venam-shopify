@@ -1,0 +1,39 @@
+{{ 'home.css' | asset_url | stylesheet_tag }}
+
+  <div class="header">
+  {% comment %} <div class="header-category d-none d-lg-block">
+  <a href="#" class="cat-toggle">
+  <i class="fas fa-bars"></i>ALL DEPARTMENT<i class="fas fa-angle-down"></i>
+  </a>
+  </div> {% endcomment %}<div>
+    <ul class="head-ul">
+      {%- for link in linklists.main-menu.links -%}
+        <li class="active dropdown">
+          <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>
+            {{ link.title }}
+          </a>
+          {%- if link.links != blank -%}
+            <ul class="submenu dropdown-content">
+              {%- for child_link in link.links -%}
+                <li class="active">
+                  <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>{{ child_link.title }}</a>
+                  {%- if child_link.links != blank -%}
+                    <ul>
+                      {%- for grandchild_link in child_link.links -%}
+                        <li>
+                          <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
+                            {{ grandchild_link.title }}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>

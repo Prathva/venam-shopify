@@ -1,0 +1,121 @@
+{% comment %} CSS links {% endcomment %}
+{{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+{{ 'fontawesome-all.min.css' | asset_url | stylesheet_tag }}
+{{ 'flaticon.css' | asset_url | stylesheet_tag }}
+{{ 'default.css' | asset_url | stylesheet_tag }}
+{{ 'style.css' | asset_url | stylesheet_tag }}
+{{ 'responsive.css' | asset_url | stylesheet_tag }}
+
+<section class="blog-area pt-100 pb-40">
+  <div class="container">
+    {% render 'title-heading' %}
+    <div class="row justify-content-center">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'new_card' -%}
+            <div class="col-lg-4 col-md-6">
+              <div class="blog-post-item text-center mb-60">
+                <div class="blog-thumb mb-25">
+                  <a href="{{ block.settings.post_url }}">
+                    {%- if block.settings.news_image != blank %}
+                      {{ block.settings.news_image | image_url: width: auto | image_tag: loading: 'lazy' }}
+                    {% endif %}
+                  </a>
+                </div>
+                <div class="blog-post-content">
+                  <h4>
+                    <a href="{{ block.settings.post_url }}">{{ block.settings.news_heading }}</a>
+                  </h4>
+                  <div class="blog-post-meta">
+                    <ul>
+                      <li>
+                        <i class="far fa-user"></i><a href="#">{{ block.settings.posted_by }}</a>
+                      </li>
+                      <li><i class="far fa-calendar-alt"></i>{{ block.settings.post_date }}</li>
+                    </ul>
+                  </div>
+                  <p>{{ block.settings.post_desc }}</p>
+                  <a class="read-more" href="{{ block.settings.post_url }}">{{ block.settings.readmore_btn }}</a>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Latest news and updates",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub-title",
+          "label": "Enter Sub-title"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Enter title"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img",
+          "label": "Please select title image"
+        }
+      ]
+    },
+    {
+      "type": "new_card",
+      "name": "News Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "news_image",
+          "label": "News Image"
+        },
+        {
+          "type": "text",
+          "id": "news_heading",
+          "label": "News Heading"
+        },
+        {
+          "type": "text",
+          "id": "posted_by",
+          "label": "News post added By"
+        },
+        {
+          "type": "text",
+          "id": "post_date",
+          "label": "Post Date"
+        },
+        {
+          "type": "text",
+          "id": "post_desc",
+          "label": "Post Description"
+        },
+        {
+          "type": "text",
+          "id": "readmore_btn",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "post_url",
+          "label": "Post URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Latest news and blog"
+    }
+  ]
+}
+{% endschema %}
