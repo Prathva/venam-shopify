@@ -1,0 +1,29 @@
+{% for product in collections[section.settings.collection].products %}
+  {{- product.title | link_to: product.url }}
+
+  {% if product.featured_image != blank %}
+    {{ product.featured_image | image_url: width: auto | image_tag: loading: 'lazy' }}
+  {% endif %}
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Collection",
+
+  "settings": [
+    {
+      "type": "collection",
+
+      "id": "collection",
+
+      "label": "Collection"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Exclusive-collection"
+    }
+  ]
+}
+{% endschema %}
