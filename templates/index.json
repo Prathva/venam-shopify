@@ -1,22 +1,11 @@
 {
-    "name": "index",
-    "sections": {
-        "core-features":{
-            "type": "core-features"
-        },"special-offer":{
-            "type": "special-offer"
-        },
-        "latest-news-update":{
-            "type": "latest-news-update"
-        },
-        "exclusive-best-selling":{
-            "type": "exclusive-best-selling"
-        }
-    },
-    "order": [
-        "core-features",
-        "special-offer",
-        "exclusive-best-selling",
-        "latest-news-update"
-    ]
+  "name": "index",
+  "sections": {
+    "core-features":{
+      "type": "core-features"
+    }
+  },
+  "order": [
+    "core-features"
+  ]
 }

@@ -1,3 +1,9 @@
+{{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+{{ 'fontawesome-all.min.css' | asset_url | stylesheet_tag }}
+{{ 'flaticon.css' | asset_url | stylesheet_tag }}
+{{ 'default.css' | asset_url | stylesheet_tag }}
+{{ 'style.css' | asset_url | stylesheet_tag }}
+{{ 'responsive.css' | asset_url | stylesheet_tag }}
 <!-- core-features -->
 <section class="core-features-area">
   <div class="container">
@@ -32,7 +38,7 @@
   "name": "Core Features",
   "blocks": [
     {
-      "type": "core_feature_card",
+      "type": "core-feature-card",
       "name": "Feature card",
       "settings": [
         {
@@ -51,9 +57,13 @@
           "id": "feature_des",
           "label": "Feature description",
           "default": "30 days money back guarantee"
+        },
+        {
+          "type": "collection_list",
+          "id": "colle_list",
+          "label": "Select Collection list"
         }
-      ],
-      "limit": 8
+      ]
     }
   ],
   "presets": [
@@ -61,7 +71,7 @@
       "name": "Core Features",
       "blocks": [
         {
-          "type": "core_feature_card"
+          "type": "core-feature-card"
         }
       ]
     }
