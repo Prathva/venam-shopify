@@ -14,20 +14,22 @@
             ]
           }
         },
-        "78dbec90-f632-467d-8ad3-a83f8ea85f04": {
+        "665a52b7-8c40-4cdf-9dd7-2dec7a62cf0f": {
           "type": "core_feature_card",
           "settings": {
-            "feature_title": "Online Support",
-            "feature_des": "30 days money back guarantee",
+            "feature_title": "Membership Discount",
+            "feature_img": "shopify:\/\/shop_images\/core_features02.png",
+            "feature_des": "Only MemberAgricultural livestock",
             "colle_list": [
 
             ]
           }
         },
-        "665a52b7-8c40-4cdf-9dd7-2dec7a62cf0f": {
+        "78dbec90-f632-467d-8ad3-a83f8ea85f04": {
           "type": "core_feature_card",
           "settings": {
-            "feature_title": "Online Support",
+            "feature_title": "Money Return",
+            "feature_img": "shopify:\/\/shop_images\/core_features03.png",
             "feature_des": "30 days money back guarantee",
             "colle_list": [
 
@@ -38,6 +40,7 @@
           "type": "core_feature_card",
           "settings": {
             "feature_title": "Online Support",
+            "feature_img": "shopify:\/\/shop_images\/core_features04.png",
             "feature_des": "30 days money back guarantee",
             "colle_list": [
 
@@ -47,8 +50,8 @@
       },
       "block_order": [
         "fd36a816-1490-41c2-8912-4430dcff20f5",
-        "78dbec90-f632-467d-8ad3-a83f8ea85f04",
         "665a52b7-8c40-4cdf-9dd7-2dec7a62cf0f",
+        "78dbec90-f632-467d-8ad3-a83f8ea85f04",
         "129bec46-c5c1-47c8-9a4b-581ce35530a1"
       ],
       "settings": {
