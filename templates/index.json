@@ -2,7 +2,7 @@
   "name": "page",
   "sections": {
       "main":{
-          "type": "core-features"
+          "type": "exclusive-product"
       }
   },
   "order": [

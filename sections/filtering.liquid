@@ -1,0 +1,86 @@
+{{ 'isotope.css' | asset_url | stylesheet_tag }}
+
+<div class="wrapper">
+  <div class="button-group filters-button-group">
+    {% comment %} <button class="button is-checked" data-filter="*">All</button> {% endcomment %}
+    <button class="button is-checked" data-filter=".city1">city1</button>
+    <button class="button" data-filter=".city2">city2</button>
+    <button class="button" data-filter=".city3">city3</button>
+  </div>
+  <div class="grid">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'exclusive_product' -%}
+          <div class="element-item city1">
+            {% for product in collections[block.settings.collection].products %}
+              {{- product.title | link_to: product.url }}
+              {% if product.featured_image != blank %}
+                {{ product.featured_image | image_url: width: auto | image_tag: loading: 'lazy' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <div class="element-item city2">
+            {% for product in collections[block.settings.collection].products %}
+              {% for tag in product.tags %}
+                {% if tag contains 'Best Seller' %}
+                  {{- product.title | link_to: product.url }}
+                  {% if product.featured_image != blank %}
+                    {{ product.featured_image | image_url: width: auto | image_tag: loading: 'lazy' }}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+
+          <div class="element-item city3">
+            {% for product in collections[block.settings.collection].products %}
+              {% for tag in product.tags %}
+                {% if tag contains 'Hot Sell' %}
+                  {{- product.title | link_to: product.url }}
+                  {% if product.featured_image != blank %}
+                    {{ product.featured_image | image_url: width: auto | image_tag: loading: 'lazy' }}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+
+          <div class="element-item city1">
+            {% for product in collections[block.settings.collection].products %}
+              {{- product.title | link_to: product.url }}
+              {% if product.featured_image != blank %}
+                {{ product.featured_image | image_url: width: auto | image_tag: loading: 'lazy' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.1/isotope.pkgd.min.js"></script>
+{{ 'exclusive-best-selling' | asset_url | script_tag }}
+{% schema %}
+{
+  "name": "Isotope filtering",
+  "blocks": [
+    {
+      "name": "Exclusive Product",
+      "type": "exclusive_product",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Isotope Filtering"
+    }
+  ]
+}
+{% endschema %}

@@ -1,7 +1,7 @@
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'exclusive_product' -%}
-      {% for product in collections[block].products %}
+      {% for product in collections[block.settings.collection].products %}
         {{- product.title | link_to: product.url }}
         {% if product.featured_image != blank %}
           {{ product.featured_image | image_url: width: auto | image_tag: loading: 'lazy' }}

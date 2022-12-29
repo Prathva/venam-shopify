@@ -132,30 +132,26 @@
 {% schema %}
 {
   "name": "Speacil Offer",
-  "blocks": [
+  "settings": [
     {
-      "type": "title",
-      "name": "title",
-      "settings": [
-        {
-          "type": "text",
-          "id": "sub-title",
-          "label": "Enter Sub-title",
-          "default": "SPECIAL OFFER"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Enter title",
-          "default": "TOP COLLECTION 2022"
-        },
-        {
-          "type": "image_picker",
-          "id": "title_img",
-          "label": "Please select title image"
-        }
-      ]
+      "type": "text",
+      "id": "sub-heading",
+      "label": "Enter Sub-heading",
+      "default": "EXCLUSIVE COLLECTION"
     },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Enter Heading",
+      "default": "BEST SELLING PRODUCTS"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_bg",
+      "label": "Heading image"
+    }
+  ],
+  "blocks": [
     {
       "type": "Single-Product-content",
       "name": "Single product content",
@@ -265,9 +261,6 @@
     {
       "name": "Speacial Offer",
       "blocks": [
-        {
-          "type": "title"
-        },
         {
           "type": "Single-Product-content"
         },
